@@ -5,7 +5,7 @@ import math
 window = tk.Tk()
 window.title("Calculator")
 
-#居中显示
+#居中显示#
 sw = window.winfo_screenwidth()  #宽度
 sh = window.winfo_screenheight()
 ww = 500
