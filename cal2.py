@@ -5,8 +5,8 @@ import math
 window = tk.Tk()
 window.title("Calculator")
 
-#居中显示#
-sw = window.winfo_screenwidth()  #宽度
+#Center display
+sw = window.winfo_screenwidth()  #Width
 sh = window.winfo_screenheight()
 ww = 500
 wh = 500
@@ -17,38 +17,38 @@ window.geometry("%dx%d+%d+%d" %(ww,wh,x,y))
 
 window.attributes("-alpha", 0.9)
 window["background"] = "black"
-#设定window的背景，颜色，透明度
+#Set the background, color, and transparency of the window
 
 font1=("黑体",25)
 font2 = ("黑体", 15)
-font3=("黑体",20)
-#定义两个之后会用到的字体格式，一个为结果行字体font1，一个为按键字体font2
+#Define two font formats that will be used later, one for the result line font font1 and one for the button font font2
 
-res_all = tk.StringVar()#总结果
+res_all = tk.StringVar()#Overall results
 res_all.set("")
-res_back= tk.StringVar()#隐藏计算式
+res_back= tk.StringVar()#Hidden calculation formula
 res_back.set("")
-#创建变量res，使得最后结果行能够随着按键的输入而变化
+#Create the variable res so that the final result line can change with the input of the button
 
-label = tk.Label(window, textvariable=res_all, height=2,font=font1,fg="white", bg="black", width=27, justify=tk.LEFT, anchor=tk.SE).grid(row=1, column=1, columnspan=5)
-#总结果行
+label = tk.Label(window, textvariable=res_all, height=2,font=font1,fg="white", bg="black", width=27, justify=tk.LEFT, anchor=tk.SE)
+label.grid(row=1, column=1, columnspan=5)
+#Summary Results Line
 
-button_2nd = tk.Button(window, text="2nd", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")
-button_pai = tk.Button(window, text="π", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")
-button_e = tk.Button(window, text="e", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")
-button_C = tk.Button(window, text="C", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")
-button_back = tk.Button(window, text="⬅", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")
+button_2nd = tk.Button(window, text="2nd", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")#Keys for switching between functions and inverse functions
+button_pai = tk.Button(window, text="π", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")#Constant π
+button_e = tk.Button(window, text="e", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")#Constant e
+button_C = tk.Button(window, text="C", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")#Clear all characters
+button_back = tk.Button(window, text="⬅", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")#Delete a character
 button_2nd.grid(row=2, column=1, padx=3, pady=2)
 button_pai.grid(row=2, column=2, padx=3, pady=2)
 button_e.grid(row=2, column=3, padx=3, pady=2)
 button_C.grid(row=2, column=4, padx=3, pady=2)
 button_back.grid(row=2, column=5, padx=3, pady=2)
 
-button_sin = tk.Button(window, text="sin", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")
-button_lc = tk.Button(window, text="(", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")
-button_rc = tk.Button(window, text=")", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")
-button_pow = tk.Button(window, text=unicodeit.replace("x^y"), width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")
-button_div = tk.Button(window, text="÷", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")
+button_sin = tk.Button(window, text="sin", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")#Sine function
+button_lc = tk.Button(window, text="(", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")#Left parenthesis
+button_rc = tk.Button(window, text=")", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")#Right parenthesis
+button_pow = tk.Button(window, text=unicodeit.replace("x^y"), width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")#Power function
+button_div = tk.Button(window, text="÷", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")#Division sign
 button_sin.grid(row=3, column=1, padx=3, pady=2)
 button_lc.grid(row=3, column=2, padx=3, pady=2)
 button_rc.grid(row=3, column=3, padx=3, pady=2)
@@ -57,11 +57,11 @@ button_div.grid(row=3, column=5, padx=3, pady=2)
 
 
 
-button_cos = tk.Button(window, text="cos", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")
-button_7 = tk.Button(window, text="7", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")
-button_8 = tk.Button(window, text="8", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")
-button_9 = tk.Button(window, text="9", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")
-button_mul = tk.Button(window, text="×", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")
+button_cos = tk.Button(window, text="cos", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")#Cosine function
+button_7 = tk.Button(window, text="7", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")#7
+button_8 = tk.Button(window, text="8", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")#8
+button_9 = tk.Button(window, text="9", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")#9
+button_mul = tk.Button(window, text="×", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")#Multiplication sign
 button_cos.grid(row=4, column=1, padx=3, pady=2)
 button_7.grid(row=4, column=2, padx=3, pady=2)
 button_8.grid(row=4, column=3, padx=3, pady=2)
@@ -70,11 +70,11 @@ button_mul.grid(row=4, column=5, padx=3, pady=2)
 
 
 
-button_tan = tk.Button(window, text="tan", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")
-button_4 = tk.Button(window, text="4", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")
-button_5 = tk.Button(window, text="5", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")
-button_6 = tk.Button(window, text="6", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")
-button_dec = tk.Button(window, text="-", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")
+button_tan = tk.Button(window, text="tan", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")#Tangent function
+button_4 = tk.Button(window, text="4", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")#4
+button_5 = tk.Button(window, text="5", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")#5
+button_6 = tk.Button(window, text="6", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")#6
+button_dec = tk.Button(window, text="-", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")#Minus sign
 button_tan.grid(row=5, column=1, padx=3, pady=2)
 button_4.grid(row=5, column=2, padx=3, pady=2)
 button_5.grid(row=5, column=3, padx=3, pady=2)
@@ -82,11 +82,11 @@ button_6.grid(row=5, column=4, padx=3, pady=2)
 button_dec.grid(row=5, column=5, padx=3, pady=2)
 
 
-button_sec = tk.Button(window, text="sec", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")
-button_1 = tk.Button(window, text="1", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")
-button_2 = tk.Button(window, text="2", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")
-button_3 = tk.Button(window, text="3", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")
-button_plu = tk.Button(window, text="+", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")
+button_sec = tk.Button(window, text="sec", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")#sec function
+button_1 = tk.Button(window, text="1", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")#1
+button_2 = tk.Button(window, text="2", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")#2
+button_3 = tk.Button(window, text="3", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")#3
+button_plu = tk.Button(window, text="+", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")#Plus sign
 button_sec.grid(row=6, column=1, padx=3, pady=2)
 button_1.grid(row=6, column=2, padx=3, pady=2)
 button_2.grid(row=6, column=3, padx=3, pady=2)
@@ -94,11 +94,11 @@ button_3.grid(row=6, column=4, padx=3, pady=2)
 button_plu.grid(row=6, column=5, padx=3, pady=2)
 
 
-button_cot = tk.Button(window, text="cot", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")
-button_np = tk.Button(window, text="n!", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")
-button_0 = tk.Button(window, text="0", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")
-button_dot = tk.Button(window, text=".", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")
-button_equ = tk.Button(window, text="=", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")
+button_cot = tk.Button(window, text="cot", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")#cot function
+button_np = tk.Button(window, text="n!", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")#Factorial
+button_0 = tk.Button(window, text="0", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")#0
+button_dot = tk.Button(window, text=".", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")#dot
+button_equ = tk.Button(window, text="=", width=5, font=font2, fg="white",relief=tk.FLAT, bg="grey")#Equal sign
 button_cot.grid(row=7, column=1, padx=3, pady=2)
 button_np.grid(row=7, column=2, padx=3, pady=2)
 button_0.grid(row=7, column=3, padx=3, pady=2)
@@ -107,9 +107,9 @@ button_equ.grid(row=7, column=5, padx=3, pady=2)
 
 
 state=0
-def change_power():
+def change_power():#function for switching between functions and inverse functions
     global state
-    if state==0:
+    if state==0:#2nd not pressed
         button_2nd.config(fg='white',bg='blue')
         button_sin.config(text=unicodeit.replace("sin^{-1}"))
         button_cos.config(text=unicodeit.replace("cos^{-1}"))
@@ -117,7 +117,7 @@ def change_power():
         button_sec.config(text=unicodeit.replace("sec^{-1}"))
         button_cot.config(text=unicodeit.replace("cot^{-1}"))
         state=1
-    else:
+    else:#2nd pressed
         button_2nd.config(fg='white',bg='grey')
         button_sin.config(text="sin")
         button_cos.config(text="cos")
@@ -127,8 +127,8 @@ def change_power():
         state=0
 
 
-clack=0
-def buttonclick(x1,x2):
+clack=0#Indicates whether equal sign calculation has been performed and whether there is still content in the label
+def buttonclick(x1,x2):#Automatically clear current content after calculation
     global clack
     if clack==1:
         res_back.set("")
@@ -140,11 +140,11 @@ def buttonclick(x1,x2):
     res_back.set(c+x2)
     res_all.set(b+x1)
 
-def clear():
+def clear():#Delete all characters
     res_back.set("")
     res_all.set("")
 
-def back():
+def back():#Delete a character
     global clack
     if clack==1:
         res_back.set("")
@@ -156,7 +156,7 @@ def back():
     res_back.set(c[0:-1])
     res_all.set(b[0:-1])
     
-def buttonclick_tr(x):
+def buttonclick_tr(x):#Processing trigonometric functions
     global clack
     if clack==1:
         res_back.set("")
@@ -203,7 +203,7 @@ def buttonclick_tr(x):
     res_back.set(c+ans2)
     res_all.set(b+ans1)
     
-def buttonclick_fac():
+def buttonclick_fac():#Process Factorial
     global clack
     if clack==1:
         res_back.set("")
@@ -221,12 +221,12 @@ def buttonclick_fac():
     res_back.set(c[0:i]+"math.factorial("+now+")")
     
 
-def eqa():
+def eqa():#Calculate final value
     global clack
     b=res_all.get()
     c=res_back.get()
     try:
-        ans = eval(c) 
+        ans = eval(c) #The eval function is used to calculate the final value of the entire hidden expression
         x=str(ans)
         if len(x)>25:x=x[0:25]
         res_all.set(x)
@@ -247,7 +247,7 @@ button_back.config(command=lambda: back())
 button_sin.config(command=lambda: buttonclick_tr(1))
 button_lc.config(command=lambda: buttonclick("(","("))
 button_rc.config(command=lambda: buttonclick(")",")"))
-button_pow.config(command=lambda: buttonclick("^","**"))
+button_pow.config(command=lambda: buttonclick("^","**"))#In Python, * * is a power operation symbol
 button_div.config(command=lambda: buttonclick("÷","/"))
 button_cos.config(command=lambda: buttonclick_tr(2))
 button_7.config(command=lambda: buttonclick("7","7"))
