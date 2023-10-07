@@ -1,3 +1,4 @@
+# Visual Calculator Based on Python
 # Assignment Table
 | The Link Your Class |https://bbs.csdn.net/forums/ssynkqtd-04 |
 | ----------------- |--------------- |
@@ -27,8 +28,21 @@
 ## Task objectives
 Implement a scientific calculator with basic operations as well as trigonometric and power function operations.
 ## Realization ideas
-
+### 1 Preliminary ideas
+Implementing this calculator requires a visual interface and calculation functions. Python not only has its powerful computing capabilities, but also the Tkinter library can easily create visual interfaces. At the same time, Python is very concise, so I plan to use Python to complete this project.
+### 2 Search for information
+I use CSDN to search for the information I need
+# Design and implementation process
+The design of the calculator is divided into several parts：
+## Visual Interface
+In this section, Tkinter can quickly design the required visual interface and adjust it according to preferences
+## Interactive button logic
+Design interactive buttons. When a user clicks a button, a function bound to the button is triggered to input the value corresponding to the button onto the screen. When the user presses the equals sign, the function calculates all values.
+## Calculation logic
+Python has a powerful built-in function: eval(). This function accepts an arithmetic expression in the form of a string and returns the value evaluated by the expression. This function can greatly simplify the calculation process, allowing us to only focus on designing expressions. However, incorrect expressions can lead to system errors. Therefore, we need to design possible user expressions correctly and add try-catch to prevent crashes caused by system errors.
+In addition, eval() accepts expressions in Python form, not in human form. For example, except for/instead of ÷, and the sine function being numpy. sin() instead of sin, it is necessary to construct expressions for eval() and expressions presented on the screen separately.
 # Code Description
+
 # Specific demonstration
 # Summary and possible future improvements
 # In the last
