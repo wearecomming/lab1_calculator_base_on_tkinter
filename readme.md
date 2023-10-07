@@ -25,7 +25,9 @@
 | Sum                                 |   700                        |                985        |
 # Task objectives and realization ideas
 ## Task objectives
+Implement a scientific calculator with basic operations as well as trigonometric and power function operations.
 ## Realization ideas
+
 # Code Description
 # Specific demonstration
 # Summary and possible future improvements

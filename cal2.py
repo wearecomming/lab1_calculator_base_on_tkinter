@@ -202,25 +202,7 @@ def buttonclick_tr(x):
             ans2=ans2+'180/np.pi*np.arccot('
     res_back.set(c+ans2)
     res_all.set(b+ans1)
-            
-def buttonclick_pow():
-    global clack
-    if clack==1:
-        res_back.set("")
-        res_all.set("")
-        clack=0
-    b=res_all.get()
-    if len(b)>=25:return
-    c=res_back.get()
-    i=len(b)-1
-    now=""
-    while i>=0 and b[i]<='9' and b[i]>='0':
-        now=b[i]+now
-        i=i-1
-    res_all.set(b+'^(')
-    if i==-1:i=0
-    res_back.set(c[0:i]+"np.power("+now+",")
-
+    
 def buttonclick_fac():
     global clack
     if clack==1:
@@ -265,7 +247,7 @@ button_back.config(command=lambda: back())
 button_sin.config(command=lambda: buttonclick_tr(1))
 button_lc.config(command=lambda: buttonclick("(","("))
 button_rc.config(command=lambda: buttonclick(")",")"))
-button_pow.config(command=lambda: buttonclick_pow())
+button_pow.config(command=lambda: buttonclick("^","**"))
 button_div.config(command=lambda: buttonclick("÷","/"))
 button_cos.config(command=lambda: buttonclick_tr(2))
 button_7.config(command=lambda: buttonclick("7","7"))
