@@ -218,6 +218,7 @@ def buttonclick_fac():#Process Factorial
     while i>=0 and b[i]<='9' and b[i]>='0':
         now=b[i]+now
         i=i-1
+    print(c[0:i]+"math.factorial("+now+")")
     res_back.set(c[0:i]+"math.factorial("+now+")")
     
 

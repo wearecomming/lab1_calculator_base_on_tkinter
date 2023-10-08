@@ -334,6 +334,20 @@ button_dot.config(command=lambda: buttonclick(".","."))
 button_equ.config(command=lambda: eqa())
 ```
 # Specific demonstration
-
+![](1.gif)
 # Summary and possible future improvements
+## Limitations
+This calculator does not have a historical data query function and cannot help users better use the calculator.
+The display screen size of this calculator is 25 characters, meaning expressions exceeding 25 characters cannot be entered. This creates certain limitations.
+## Future Plans
+Add historical query function for greater user convenience
+Add a character size that can automatically adapt to the number of words, reducing it to increase the number of words when there are many
+Add a double-layer display screen, one layer for displaying the current number and one layer for displaying the results
+Simplify code: Use a for loop to create all buttons at once
+Encapsulation into Class: Encapsulates buttons into classes for easy addition and invocation
 # In the last
+Firstly, I learned how to use Tkinter to create a simple desktop application. Tkinter is a powerful tool that allows developers to easily build Tkinter applications. By learning how to design interfaces, add controls, handle user input, and master basic tkenter concepts, I am able to create a basic calculator application.
+In addition, by documenting my project experience, I have improved my communication and sharing skills. Blogging is a great way to share my thoughts and experiences with others. By clearly articulating my ideas, I can help others understand how to create a simple tkenter application and share my learning process and findings. It also helps me better understand and summarize my work, improving my programming skills.
+In summary, this project has enabled me to learn a lot about interface and software management issues, accumulating more experience for future projects
+# github link
+https://github.com/wearecomming/lab1_calculator_base_on_tkinter
